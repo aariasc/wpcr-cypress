@@ -5,7 +5,7 @@ describe('01 Revisar Homepage', function () {
     cy.visit('https://cypress.coffeemakerideas.com/')
 
     cy.log('Revisando title del sitio')
-    cy.title().should('eq', 'Patito Test – Otro sitio realizado con WordPress')
+    cy.title().should('eq', 'Cypress Demo – Otro sitio realizado con WordPress')
 
     cy.log('Click al boton View More')
     cy.get('.elementor-element-d3f565c .elementor-button-text').click()
