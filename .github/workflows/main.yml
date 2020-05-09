@@ -1,7 +1,24 @@
-name: Ejecutar Cypress
+name: Instalar Plugin y Ejecutar Cypress
 on: [push]
 jobs:
+  wp-deploy:
+    name: Instalar Plugin en WP
+    runs-on: ubuntu-16.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Instalar
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          source: "mi-plugin/mi-plugin.php"
+          target: "${{ secrets.HOST }}/wp-content/plugins"
+
   cypress-run:
+    needs: wp-deploy
     name: Ejecutar Cypress
     runs-on: ubuntu-16.04
     steps:
