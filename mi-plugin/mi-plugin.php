@@ -8,7 +8,7 @@ Author: Juan Vainas
 Author URI: http://jvainas.org
 */
 
-add_action('init', 'mi_plugin_register_shortcodes');
+// add_action('init', 'mi_plugin_register_shortcodes');
 
 
 function mi_plugin_register_shortcodes()
