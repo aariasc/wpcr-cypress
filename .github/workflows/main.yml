@@ -1,0 +1,16 @@
+name: Ejecutar Cypress
+on: [push]
+jobs:
+  cypress-run:
+    name: Ejecutar Cypress
+    runs-on: ubuntu-16.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Correr Pruebas
+        uses: cypress-io/github-action@v1
+        with:
+          record: true
+          working-directory: pruebas
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}

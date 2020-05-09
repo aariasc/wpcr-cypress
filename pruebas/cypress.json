@@ -1,0 +1,7 @@
+{
+  "baseUrl": "https://cypress.coffeemakerideas.com",
+  "viewportHeight": 1024,
+  "viewportWidth": 1280,
+  "defaultCommandTimeout": 10000,
+  "projectId": "k69mto"
+}
